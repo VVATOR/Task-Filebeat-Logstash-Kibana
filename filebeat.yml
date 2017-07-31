@@ -1,0 +1,18 @@
+###################### Filebeat Configuration #########################
+### Author:     Vikhliayeu Vitali
+### Task:       Task-Filebeat-Logstash-Kibana
+
+#=========================== Filebeat prospectors =============================
+filebeat.prospectors:
+
+- input_type: log
+
+  # Paths that should be crawled and fetched. Glob based paths.
+  paths:
+    - C:\TEMP\VIKHLIAYEU\logs\elasticsearch-filebeat-logstash-kibana\*.log
+    
+  document_type: elasticsearch_filebeat_logstash_kibana_task
+
+#----------------------------- Logstash output --------------------------------
+output.logstash:
+  hosts: ["localhost:5044"]
